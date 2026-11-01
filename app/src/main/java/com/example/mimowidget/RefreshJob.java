@@ -1,0 +1,1 @@
+package com.example.mimowidget;import android.app.job.*;public class RefreshJob extends JobService {public boolean onStartJob(JobParameters p){new Thread(()->{Data.refresh(getApplicationContext());jobFinished(p,false);}).start();return true;}public boolean onStopJob(JobParameters p){return true;}}
